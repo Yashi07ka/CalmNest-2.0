@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create My Calm Scene · CalmNest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assests/css/base.css">
+<link rel="stylesheet" href="assests/css/nature.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><i></i>CalmNest</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nature.html" class="on">Nature</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="activities.html">Creative Break</a></li>
+      <li><a href="garden.html">Thought Garden</a></li>
+      <li><a href="login.html" class="btn btn-primary" style="padding:.5rem 1.2rem">Sign in</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap creator">
+  <div class="head reveal">
+    <p class="eyebrow">Nature</p>
+    <h1>Create my calm scene</h1>
+    <p class="lead">Choose a place, set the mood of the sky, or bring your own view.</p>
+  </div>
+
+  <div class="layout">
+    <div class="stage reveal" id="stage" data-preset="forest" data-mood="morning" style="--d:.1s">
+      <div class="sky"></div>
+      <div class="photo" id="photo"></div>
+      <div class="sun"></div>
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <svg class="land" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs><symbol id="pine" viewBox="0 0 60 100"><polygon points="30,0 52,42 41,42 58,78 2,78 19,42 8,42"/></symbol></defs>
+        <g class="scene" data-scene="forest">
+          <path fill="var(--l1)" d="M0 250 Q200 180 400 240 T800 220 V400H0Z"/>
+          <g fill="var(--l2)"><use href="#pine" x="60" y="200" width="42" height="75"/><use href="#pine" x="560" y="190" width="46" height="82"/><use href="#pine" x="680" y="210" width="38" height="68"/></g>
+          <path fill="var(--l2)" d="M0 300 Q250 240 480 290 T800 275 V400H0Z"/>
+          <g fill="var(--l3)"><use href="#pine" x="120" y="230" width="60" height="110"/><use href="#pine" x="190" y="260" width="44" height="80"/><use href="#pine" x="470" y="240" width="64" height="116"/><use href="#pine" x="620" y="250" width="54" height="98"/></g>
+          <path fill="var(--l3)" d="M0 350 Q300 310 560 345 T800 335 V400H0Z"/>
+        </g>
+        <g class="scene" data-scene="ocean">
+          <rect y="250" width="800" height="150" fill="var(--l1)"/>
+          <path class="wave w1" fill="var(--l2)" d="M0 285 Q50 265 100 285 T200 285 T300 285 T400 285 T500 285 T600 285 T700 285 T800 285 T900 285 T1000 285 V400H0Z"/>
+          <path class="wave w2" fill="var(--l3)" d="M0 330 Q50 312 100 330 T200 330 T300 330 T400 330 T500 330 T600 330 T700 330 T800 330 T900 330 T1000 330 V400H0Z"/>
+        </g>
+        <g class="scene" data-scene="mountains">
+          <polygon fill="var(--l1)" points="0,300 150,140 260,250 390,100 530,260 650,160 800,300 800,400 0,400"/>
+          <polygon fill="#fff" opacity=".8" points="150,140 125,175 150,165 172,180 ; 390,100 360,145 388,132 415,150"/>
+          <polygon fill="var(--l2)" points="0,340 120,240 240,320 380,230 520,330 680,250 800,330 800,400 0,400"/>
+          <path fill="var(--l3)" d="M0 370 Q200 330 420 365 T800 350 V400H0Z"/>
+        </g>
+      </svg>
+      <div class="rain" id="rain"></div>
+      <div class="tint"></div>
+      <div class="label" id="label">Forest · Morning</div>
+    </div>
+
+    <aside class="panel card reveal" style="--d:.2s">
+      <label class="lbl" for="name">Scene name</label>
+      <input id="name" type="text" maxlength="40" placeholder="e.g. Study break by the sea">
+
+      <span class="lbl">Place</span>
+      <div class="opts" id="presets">
+        <button class="opt" data-v="forest" aria-pressed="true">🌲 Forest</button>
+        <button class="opt" data-v="ocean" aria-pressed="false">🌊 Ocean</button>
+        <button class="opt" data-v="mountains" aria-pressed="false">🏔 Mountains</button>
+      </div>
+
+      <span class="lbl">Atmosphere</span>
+      <div class="opts" id="moods">
+        <button class="opt" data-v="morning" aria-pressed="true">🌅 Morning</button>
+        <button class="opt" data-v="sunset" aria-pressed="false">🌇 Sunset</button>
+        <button class="opt" data-v="rainy" aria-pressed="false">🌧 Rainy</button>
+      </div>
+
+      <span class="lbl">Your own background</span>
+      <div class="row">
+        <label class="btn btn-ghost" for="file">📷 Upload image</label>
+        <input id="file" type="file" accept="image/*" hidden>
+        <button class="btn btn-ghost" id="clear" hidden>Remove</button>
+      </div>
+
+      <button class="btn btn-primary save" id="save">💾 Save my scene</button>
+      <div class="saved" id="saved"></div>
+    </aside>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assests/js/main.js"></script>
+<script src="assests/js/nature.js"></script>
+</body>
+</html>

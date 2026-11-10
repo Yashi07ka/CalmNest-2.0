@@ -1,0 +1,1219 @@
+
+/* =====================================
+   CALMNEST — THE LITTLE UNIVERSE
+   Dreamy Anime Inspired Design
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --u-purple: #8d79c9;
+  --u-purple-dark: #65559b;
+  --u-lavender: #c8b9f2;
+  --u-pink: #f5c7df;
+  --u-blue: #c8e5fa;
+  --u-yellow: #fff0b8;
+  --u-cream: #fffaf4;
+  --u-text: #514b70;
+  --u-muted: #89839f;
+  --u-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: var(--u-text);
+  background:
+    radial-gradient(circle at 15% 10%, #f2dff6 0, transparent 30%),
+    radial-gradient(circle at 85% 20%, #dcecff 0, transparent 32%),
+    linear-gradient(180deg, #f8f1ff 0%, #eef4ff 48%, #fff8f3 100%);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* PAGE */
+
+.universe-page {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 24px 0 30px;
+}
+
+
+/* NAVIGATION */
+
+.universe-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 22px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(113, 99, 160, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.universe-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--u-purple-dark);
+}
+
+.logo-star {
+  color: #e5a8d0;
+  font-size: 27px;
+}
+
+.universe-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #77708f;
+}
+
+.universe-links a {
+  transition: color 0.2s ease;
+}
+
+.universe-links a:hover {
+  color: var(--u-purple);
+}
+
+.nav-map-btn {
+  padding: 11px 17px;
+  color: white;
+  background: linear-gradient(135deg, #a998df, #8877c4);
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 5px 14px rgba(141, 121, 201, 0.2);
+}
+
+
+/* HERO */
+
+.universe-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  min-height: 430px;
+  margin: 26px 0 58px;
+  padding: 48px 58px;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(255,255,255,0.6), transparent 18%),
+    linear-gradient(135deg, #d9ccf7 0%, #c9ddfa 52%, #f5d9ec 100%);
+  box-shadow: 0 18px 45px rgba(128, 112, 177, 0.14);
+}
+
+.universe-hero::before,
+.universe-hero::after {
+  content: "✦  ·  ✧  ·  ✦";
+  position: absolute;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 20px;
+  pointer-events: none;
+}
+
+.universe-hero::before {
+  top: 30px;
+  right: 30px;
+}
+
+.universe-hero::after {
+  bottom: 28px;
+  left: 45%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.hero-eyebrow,
+.section-eyebrow {
+  color: #8272b5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-content h1 {
+  margin: 18px 0;
+  color: #554a80;
+  font-family: "Quicksand", sans-serif;
+  font-size: clamp(36px, 4.5vw, 58px);
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: #8b75c5;
+}
+
+.hero-content p {
+  max-width: 390px;
+  margin-bottom: 26px;
+  color: #71688f;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  color: white;
+  background: linear-gradient(135deg, #9c89d4, #7d6bb8);
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(113, 96, 170, 0.22);
+  transition: transform 0.25s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 26px;
+  color: #81789e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* HERO PLANET */
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 310px;
+}
+
+.hero-planet {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 235px;
+  height: 235px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 25%, #fff5cc 0 5%, transparent 6%),
+    radial-gradient(circle at 35% 30%, #d9d0ff, #a6b9ef 55%, #8d9edc 100%);
+  box-shadow:
+    inset -18px -20px 35px rgba(99, 91, 160, 0.2),
+    0 0 45px rgba(255,255,255,0.65);
+  animation: planetFloat 5s ease-in-out infinite;
+}
+
+.planet-house,
+.planet-flower,
+.planet-tree {
+  position: absolute;
+  filter: drop-shadow(0 4px 3px rgba(90, 80, 140, 0.12));
+}
+
+.planet-house {
+  top: 70px;
+  left: 82px;
+  font-size: 54px;
+}
+
+.planet-flower {
+  bottom: 42px;
+  left: 40px;
+  font-size: 34px;
+}
+
+.planet-tree {
+  right: 32px;
+  bottom: 38px;
+  font-size: 42px;
+}
+
+.hero-orbit {
+  position: absolute;
+  width: 300px;
+  height: 110px;
+  border: 2px solid rgba(255,255,255,0.65);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.orbit-two {
+  width: 340px;
+  height: 145px;
+  transform: rotate(35deg);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.hero-star,
+.hero-cloud {
+  position: absolute;
+  z-index: 2;
+}
+
+.hero-star {
+  color: white;
+  font-size: 25px;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.star-one {
+  top: 20px;
+  left: 18%;
+}
+
+.star-two {
+  top: 65px;
+  right: 12%;
+  animation-delay: 0.8s;
+}
+
+.star-three {
+  bottom: 35px;
+  left: 22%;
+  animation-delay: 1.5s;
+}
+
+.hero-cloud {
+  font-size: 43px;
+  opacity: 0.9;
+  animation: cloudFloat 6s ease-in-out infinite;
+}
+
+.cloud-one {
+  top: 25px;
+  right: 5%;
+}
+
+.cloud-two {
+  bottom: 10px;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+
+/* SECTION HEADINGS */
+
+.universe-section {
+  margin-bottom: 58px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.section-heading h2,
+.map-heading h2,
+.universe-creations h2 {
+  margin: 10px 0;
+  color: #5b527e;
+  font-family: "Quicksand", sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.section-heading p,
+.map-heading p {
+  margin: 0;
+  color: var(--u-muted);
+  font-size: 13px;
+}
+
+
+/* FEATURE CARDS */
+
+.universe-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.universe-card {
+  padding: 22px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(113, 99, 160, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.universe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(113, 99, 160, 0.13);
+}
+
+.card-art {
+  display: grid;
+  place-items: center;
+  height: 125px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  font-size: 55px;
+}
+
+.planet-art {
+  background: linear-gradient(135deg, #e2d9ff, #d4e9ff);
+}
+
+.creature-art {
+  background: linear-gradient(135deg, #ffe3ed, #fff0c8);
+}
+
+.challenge-art {
+  background: linear-gradient(135deg, #d9eaff, #e9dfff);
+}
+
+.future-art {
+  background: linear-gradient(135deg, #ffe9d8, #f7dff0);
+}
+
+.card-tag {
+  color: #a18fc9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.universe-card h3 {
+  margin: 9px 0;
+  color: #5b527e;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+}
+
+.universe-card p {
+  min-height: 42px;
+  margin: 0 0 17px;
+  color: #89839f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.card-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 13px;
+  border: 0;
+  border-radius: 12px;
+  color: #7968ad;
+  background: #f0ebff;
+  font-size: 12px;
+  font-weight: 800;
+  transition: background 0.2s ease;
+}
+
+.card-button:hover {
+  background: #e5dcff;
+}
+
+
+/* UNIVERSE MAP */
+
+.universe-map-section {
+  margin-bottom: 45px;
+  padding: 30px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(255,255,255,0.95);
+  box-shadow: 0 10px 30px rgba(113, 99, 160, 0.07);
+}
+
+.map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.map-count {
+  padding: 10px 14px;
+  color: #8b79bd;
+  background: #f0ebff;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.universe-map {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 250px;
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.8), transparent 10%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.6), transparent 12%),
+    linear-gradient(135deg, #d8d2f7, #d3e8fa 55%, #f7dfee);
+}
+
+.universe-map::before {
+  content: "✦      ✧          ✦      ·      ✧       ✦";
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 18px;
+}
+
+.map-empty {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.map-empty > span {
+  font-size: 35px;
+}
+
+.map-empty h3 {
+  margin: 10px 0;
+  color: #655a91;
+  font-family: "Quicksand", sans-serif;
+  font-size: 19px;
+}
+
+.map-empty p {
+  margin-bottom: 15px;
+  color: #81789e;
+  font-size: 12px;
+}
+
+.map-empty a {
+  display: inline-block;
+  padding: 10px 15px;
+  color: white;
+  background: #9381c9;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* FOOTER */
+
+.universe-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 5px;
+  color: #9690aa;
+  font-size: 11px;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes planetFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes cloudFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+  .universe-links {
+    display: none;
+  }
+
+  .universe-hero {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .hero-visual {
+    min-height: 280px;
+  }
+
+  .universe-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .universe-page {
+    width: 94%;
+  }
+
+  .universe-nav {
+    padding: 14px;
+  }
+
+  .nav-map-btn {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .universe-hero {
+    padding: 30px 22px;
+    border-radius: 24px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-planet {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-orbit {
+    width: 250px;
+  }
+
+  .universe-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .universe-map-section {
+    padding: 20px;
+  }
+
+  .map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .universe-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Dreamy Anime Hero Heading */
+
+.hero-content h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: clamp(42px, 5vw, 66px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  color: #6e5ba8;
+  text-shadow: 0 4px 18px rgba(158, 133, 218, 0.18);
+}
+
+.hero-content h1 span {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #8e78d0,
+    #b18bd8,
+    #d58fbd,
+    #8e78d0
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: dreamyText 5s ease-in-out infinite;
+}
+
+@keyframes dreamyText {
+  0%, 100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+.dream-title {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dream-title .title-small {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: #9281bd;
+  -webkit-text-fill-color: #9281bd;
+}
+
+.dream-title .title-main {
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.12;
+}
+
+.dream-title .title-sparkle {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  background: none;
+  color: #897cae;
+  -webkit-text-fill-color: #897cae;
+  animation: none;
+}
+.dream-title {
+  margin: 0;
+}
+
+.dream-title .title-small {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: #9281bd;
+  text-shadow: 0 3px 12px rgba(158, 133, 218, 0.2);
+}
+
+/* =====================================
+   ANIME LITTLE UNIVERSE HERO
+===================================== */
+
+.anime-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  min-height: 560px;
+  padding: 55px 35px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 32px;
+
+  background:
+    radial-gradient(circle at 50% 45%, #fff5ff 0%, transparent 28%),
+    linear-gradient(135deg, #b8b9f7 0%, #c6d9ff 48%, #f5cfee 100%);
+}
+
+/* Background decorations */
+
+.anime-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.anime-moon {
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  color: #fff3c5;
+  font-size: 85px;
+  text-shadow: 0 0 35px rgba(255, 242, 190, 0.7);
+}
+
+.anime-spark {
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  animation: animeTwinkle 3s ease-in-out infinite;
+}
+
+.spark-a {
+  top: 16%;
+  left: 43%;
+}
+
+.spark-b {
+  top: 25%;
+  right: 8%;
+  animation-delay: 1s;
+}
+
+.spark-c {
+  bottom: 18%;
+  left: 52%;
+  animation-delay: 1.8s;
+}
+
+.anime-cloud {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 65px;
+  animation: animeCloudFloat 7s ease-in-out infinite;
+}
+
+.cloud-a {
+  bottom: 5%;
+  left: 5%;
+}
+
+.cloud-b {
+  top: 12%;
+  right: 25%;
+  animation-delay: 2s;
+}
+
+/* Anime girl and cat */
+
+.anime-character {
+  position: relative;
+  align-self: end;
+  z-index: 1;
+  margin-left: -25px;
+  margin-bottom: -55px;
+}
+
+.anime-character img {
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+  filter: drop-shadow(0 15px 25px rgba(91, 72, 139, 0.18));
+  animation: animeCharacterFloat 6s ease-in-out infinite;
+}
+
+/* Welcome content */
+
+.anime-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.anime-hero-content .hero-eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #7254ad;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.anime-hero-content .dream-title {
+  margin: 0 0 20px;
+}
+
+.anime-hero-content .title-small {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  color: #7652b5;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: clamp(13px, 1.3vw, 17px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 25px rgba(119, 91, 174, 0.08);
+}
+
+.anime-hero-content p {
+  max-width: 360px;
+  margin: 0 auto 25px;
+  color: #67518f;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Glowing button */
+
+.anime-hero-content .hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 23px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(135deg, #a17be4, #7954c5);
+  box-shadow:
+    0 8px 25px rgba(119, 81, 185, 0.28),
+    0 0 18px rgba(255, 255, 255, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.anime-hero-content .hero-button:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 30px rgba(119, 81, 185, 0.35),
+    0 0 25px rgba(255, 255, 255, 0.65);
+}
+
+.anime-hero-content .hero-note {
+  justify-content: center;
+  margin-top: 22px;
+  color: #765b9e;
+  font-size: 12px;
+}
+
+/* Floating planet */
+
+.anime-planet-area {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 330px;
+}
+
+.anime-floating-planet {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, #f4f5ff, transparent 15%),
+    linear-gradient(145deg, #c9e8b9, #9fc8e9 48%, #a79ae3);
+  box-shadow:
+    inset -20px -25px 40px rgba(93, 85, 157, 0.25),
+    0 0 40px rgba(255, 255, 255, 0.7);
+  animation: animePlanetFloat 5s ease-in-out infinite;
+}
+
+.anime-planet-house,
+.anime-planet-tree,
+.anime-planet-flower,
+.anime-planet-water {
+  position: absolute;
+  filter: drop-shadow(0 4px 5px rgba(83, 71, 130, 0.15));
+}
+
+.anime-planet-house {
+  top: 68px;
+  left: 82px;
+  font-size: 48px;
+}
+
+.anime-planet-tree {
+  right: 30px;
+  bottom: 42px;
+  font-size: 38px;
+}
+
+.anime-planet-flower {
+  bottom: 35px;
+  left: 35px;
+  font-size: 32px;
+}
+
+.anime-planet-water {
+  top: 28px;
+  right: 45px;
+  font-size: 20px;
+}
+
+.anime-planet-orbit {
+  position: absolute;
+  width: 290px;
+  height: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.orbit-b {
+  width: 320px;
+  height: 140px;
+  transform: rotate(35deg);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.anime-planet-star,
+.anime-planet-cloud {
+  position: absolute;
+  color: white;
+  font-size: 27px;
+  animation: animeTwinkle 3s ease-in-out infinite;
+}
+
+.anime-planet-star {
+  top: 18%;
+  right: 10%;
+}
+
+.anime-planet-cloud {
+  bottom: 15%;
+  left: 5%;
+}
+
+/* Animations */
+
+@keyframes animeTwinkle {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes animeCloudFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes animeCharacterFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes animePlanetFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .anime-hero {
+    grid-template-columns: 1fr 1fr;
+    padding: 35px 25px;
+  }
+
+  .anime-character {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .anime-hero-content {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .anime-planet-area {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .anime-hero {
+    grid-template-columns: 1fr;
+    padding: 30px 18px;
+  }
+
+  .anime-character {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 260px;
+    margin: 0 auto -20px;
+  }
+
+  .anime-planet-area {
+    grid-column: 1;
+    grid-row: 3;
+    min-height: 280px;
+  }
+
+  .anime-floating-planet {
+    width: 190px;
+    height: 190px;
+  }
+
+  .anime-planet-orbit {
+    width: 240px;
+  }
+
+  .anime-hero-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+/* Fix anime artwork placement */
+
+.anime-hero {
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 10px;
+}
+
+.anime-character {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  margin: 0 0 0 -25px;
+  z-index: 2;
+}
+
+.anime-character img {
+  width: 125%;
+  max-width: 440px;
+  border-radius: 28px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 82%,
+    transparent 100%
+  );
+}
+
+.anime-hero-content {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.anime-planet-area {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Keep the character visible on smaller screens */
+@media (max-width: 900px) {
+  .anime-character {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 auto;
+  }
+
+  .anime-hero-content {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .anime-planet-area {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+/* Fix hero spacing and prevent overlap */
+
+.anime-hero {
+  grid-template-columns: 0.85fr 1.15fr 0.9fr;
+  gap: 24px;
+  padding: 45px 28px;
+}
+
+.anime-character {
+  width: 100%;
+  margin: 35px 0 0 -10px;
+  align-self: center;
+}
+
+.anime-character img {
+  width: 100%;
+  max-width: 330px;
+  border-radius: 28px;
+}
+
+.anime-hero-content {
+  min-width: 0;
+  padding: 0 10px;
+}
+
+.anime-hero-content .title-small {
+  font-size: 13px;
+  letter-spacing: 1px;
+  white-space: normal;
+}
+
+.anime-hero-content p {
+  font-size: 14px;
+}
+
+.anime-planet-area {
+  min-width: 0;
+}
+
+/* Tablet and mobile layout */
+@media (max-width: 900px) {
+  .anime-hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .anime-character {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .anime-hero-content {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .anime-planet-area {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

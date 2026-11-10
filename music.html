@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music · CalmNest</title>
+<meta name="description" content="Calm piano, rain, nature sounds and focus music to help you settle your mind.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assests/css/base.css">
+<link rel="stylesheet" href="assests/css/music.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><i></i>CalmNest</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nature.html">Nature</a></li>
+      <li><a href="music.html" class="on">Music</a></li>
+      <li><a href="activities.html">Creative Break</a></li>
+      <li><a href="garden.html">Thought Garden</a></li>
+      <li><a href="login.html" class="btn btn-primary" style="padding:.5rem 1.2rem">Sign in</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap music">
+  <div class="head reveal">
+    <p class="eyebrow">Music</p>
+    <h1>Sounds to <em>settle</em> into.</h1>
+    <p class="lead">Pick a mood, press play, and let the room go quiet. Everything here plays right in your browser.</p>
+  </div>
+
+  <div class="cats" id="cats" role="group" aria-label="Music categories"></div>
+
+<section class="youtube-panel">
+  <div>
+    <p class="eyebrow">MORE MUSIC</p>
+    <h2>Find your favourite songs 🎵</h2>
+    <p>Discover songs and playlists on YouTube.</p>
+  </div>
+
+  <form action="https://www.youtube.com/results" method="get" target="_blank">
+    <input
+      type="search"
+      name="search_query"
+      placeholder="Search songs or artists..."
+      aria-label="Search songs or artists"
+      required
+    />
+    <button class="btn btn-primary" type="submit">
+      ▶ Open YouTube
+    </button>
+  </form>
+</section>
+
+  <div class="tools reveal">
+    <label class="search">
+      <span aria-hidden="true">🔍</span>
+      <input id="search" type="search" placeholder="Search sounds: rain, sleep, study…" aria-label="Search sounds" autocomplete="off">
+    </label>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+
+  <div class="tgrid" id="grid"></div>
+
+  <div class="empty card" id="empty" hidden>
+    <span>🍃</span>
+    <h3>Nothing matches that yet</h3>
+    <p>Try a different word, or switch back to all sounds.</p>
+    <button class="btn btn-ghost" id="reset">Show all sounds</button>
+  </div>
+
+  <p class="note">Most sounds here are generated live in your browser, so they work offline and never repeat exactly. Tracks backed by audio files show a real progress bar.</p>
+  
+  <section class="upload-panel">
+    <div>
+      <p class="eyebrow">YOUR OWN MUSIC</p>
+      <h2>Bring your favourite songs 🎧</h2>
+      <p>Choose an audio file from your device and listen in CalmNest.</p>
+    </div>
+
+    <label class="btn btn-primary" for="localAudio">
+      + Choose audio
+    </label>
+
+    <input
+      id="localAudio"
+      type="file"
+      accept="audio/*"
+      hidden
+    />
+
+    <p id="uploadStatus" aria-live="polite">No song selected yet</p>
+
+    <audio id="localPlayer" controls preload="metadata"></audio>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> CalmNest · Made with care for students. Not a substitute for professional help.</div></footer>
+
+<!-- Player bar -->
+<div class="player" id="player" aria-label="Music player">
+  <button class="pbtn" id="pPlay" aria-label="Play">▶</button>
+  <div class="pinfo"><strong id="pTitle">–</strong><small id="pSub"></small></div>
+  <div class="pprog">
+    <input class="bar" type="range" id="pBar" min="0" max="1" value="0" step="0.1" aria-label="Progress" disabled>
+    <span id="pTime">0:00 / --:--</span>
+  </div>
+  <label class="pvol"><span aria-hidden="true">🔊</span><input class="bar" type="range" id="pVol" min="0" max="1" step="0.01" value="0.7" aria-label="Volume"></label>
+  <label class="plen" id="pLenWrap">Session
+    <select id="pLen" aria-label="Session length">
+      <option value="300">5 min</option>
+      <option value="600" selected>10 min</option>
+      <option value="1200">20 min</option>
+      <option value="1800">30 min</option>
+      <option value="3600">60 min</option>
+    </select>
+  </label>
+  <button class="pclose" id="pStop" aria-label="Stop and close player">✕</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assests/js/main.js"></script>
+<script src="assests/js/music.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thought Garden · CalmNest</title>
+<meta name="description" content="Write diary pages, decorate them with stickers and watch your thoughts grow into a garden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assests/css/base.css">
+<link rel="stylesheet" href="assests/css/diary-garden.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><i></i>CalmNest</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nature.html">Nature</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="activities.html">Creative Break</a></li>
+      <li><a href="diary-garden.html">Thought Garden</a></li>
+      <li><a href="login.html" class="btn btn-primary" style="padding:.5rem 1.2rem">Sign in</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="dg-app wrap">
+
+  <div class="dg-banner" id="dgBanner" role="alert" hidden></div>
+
+  <!-- Hero -->
+  <section class="dg-hero">
+    <span class="dg-star s1" aria-hidden="true"></span>
+    <span class="dg-star s2" aria-hidden="true"></span>
+    <p class="eyebrow reveal">Thought Garden</p>
+    <h1 class="reveal" style="--d:.1s">Write a thought. <em>Watch it bloom.</em></h1>
+    <p class="lead reveal" style="--d:.2s">A quiet diary where every page you save plants something in your garden. Decorate your pages, group them into collections and come back whenever you like.</p>
+  </section>
+
+  <!-- Collections bar -->
+  <section class="dg-collbar reveal" aria-label="Garden collections">
+    <div class="dg-tabs" id="dgTabs" role="tablist" aria-label="Collections">
+      <button type="button" class="dg-tab" role="tab" aria-selected="true" data-coll="all">
+        <span>All Thoughts</span><b class="dg-tab-n">0</b>
+      </button>
+    </div>
+    <div class="dg-collbtns">
+      <div class="dg-collactions" id="dgCollActions" hidden>
+        <button type="button" class="dg-act" id="dgRename">✎ Rename</button>
+        <button type="button" class="dg-act danger" id="dgDeleteColl">Delete collection</button>
+      </div>
+      <button type="button" class="btn btn-ghost dg-small" id="dgNewColl">＋ New collection</button>
+    </div>
+  </section>
+
+  <!-- Diary + Garden -->
+  <div class="dg-grid">
+
+    <section class="dg-card dg-diary reveal" aria-labelledby="dgDiaryHead" style="--d:.1s">
+      <header class="dg-card-head">
+        <div>
+          <p class="dg-kicker">Today's page</p>
+          <h2 id="dgDiaryHead">Your diary</h2>
+        </div>
+        <div class="dg-editing" id="dgEditing" hidden>
+          <span>✎ Editing a saved page</span>
+          <button type="button" class="dg-link" id="dgCancel">Cancel</button>
+        </div>
+      </header>
+
+      <form id="dgForm" novalidate autocomplete="off">
+        <div class="dg-row">
+          <label class="dg-field dg-date">
+            <span class="dg-lbl">Date</span>
+            <input class="dg-input" type="date" id="dgDate" name="date" required>
+          </label>
+          <label class="dg-field dg-grow">
+            <span class="dg-lbl">Title (optional)</span>
+            <input class="dg-input" type="text" id="dgTitle" name="title" maxlength="60" placeholder="A small title for today">
+          </label>
+        </div>
+
+        <fieldset class="dg-moods" id="dgMoods">
+          <legend class="dg-lbl">How are you feeling?</legend>
+          <div class="dg-moodrow">
+            <div class="dg-mood m-joyful"><input type="radio" name="mood" id="dgMood-joyful" value="joyful"><label for="dgMood-joyful">😊 Joyful</label></div>
+            <div class="dg-mood m-calm"><input type="radio" name="mood" id="dgMood-calm" value="calm" checked><label for="dgMood-calm">😌 Calm</label></div>
+            <div class="dg-mood m-hopeful"><input type="radio" name="mood" id="dgMood-hopeful" value="hopeful"><label for="dgMood-hopeful">🌤 Hopeful</label></div>
+            <div class="dg-mood m-tired"><input type="radio" name="mood" id="dgMood-tired" value="tired"><label for="dgMood-tired">😴 Tired</label></div>
+            <div class="dg-mood m-anxious"><input type="radio" name="mood" id="dgMood-anxious" value="anxious"><label for="dgMood-anxious">😟 Anxious</label></div>
+            <div class="dg-mood m-low"><input type="radio" name="mood" id="dgMood-low" value="low"><label for="dgMood-low">🌧 Low</label></div>
+          </div>
+        </fieldset>
+
+        <div class="dg-paper" id="dgPaper">
+          <textarea id="dgText" name="text" rows="9" maxlength="2000" aria-label="Diary entry" placeholder="Write whatever is on your mind. This page is only for you."></textarea>
+          <div class="dg-sticker-layer" id="dgStickerLayer" role="group" aria-label="Stickers on this page"></div>
+          <span class="dg-count" id="dgCount">0 / 2000</span>
+        </div>
+
+        <div class="dg-stickers">
+          <div class="dg-stickers-head">
+            <span class="dg-lbl">Stickers</span>
+            <span class="dg-hint">Tap to place, drag to move</span>
+          </div>
+          <div class="dg-stab-row" id="dgStickerTabs" role="group" aria-label="Sticker categories">
+            <button type="button" class="dg-stab" data-cat="flowers" aria-pressed="true">🌸 Flowers</button>
+            <button type="button" class="dg-stab" data-cat="cats" aria-pressed="false">🐱 Cats</button>
+            <button type="button" class="dg-stab" data-cat="butterflies" aria-pressed="false">🦋 Butterflies</button>
+            <button type="button" class="dg-stab" data-cat="stars" aria-pressed="false">⭐ Stars</button>
+            <button type="button" class="dg-stab" data-cat="clouds" aria-pressed="false">☁️ Clouds</button>
+            <button type="button" class="dg-stab" data-cat="ribbons" aria-pressed="false">🎀 Ribbons</button>
+            <button type="button" class="dg-stab" data-cat="plants" aria-pressed="false">🪴 Plants</button>
+          </div>
+          <div class="dg-sgrid" id="dgStickerGrid"></div>
+          <div class="dg-sticker-tools" id="dgStickerTools" hidden>
+            <span class="dg-hint">Selected sticker:</span>
+            <button type="button" class="dg-act" id="dgStSmaller" aria-label="Make sticker smaller">− Smaller</button>
+            <button type="button" class="dg-act" id="dgStLarger" aria-label="Make sticker larger">＋ Larger</button>
+            <button type="button" class="dg-act" id="dgStRotate" aria-label="Rotate sticker">↻ Rotate</button>
+            <button type="button" class="dg-act danger" id="dgStRemove" aria-label="Remove sticker">Remove</button>
+          </div>
+        </div>
+
+        <div class="dg-field dg-plantin">
+          <span class="dg-lbl">Plant in collections</span>
+          <div class="dg-chips" id="dgEntryColls"></div>
+        </div>
+
+        <p class="dg-formerr" id="dgFormErr" role="alert" hidden></p>
+
+        <div class="dg-actions">
+          <button type="submit" class="btn btn-primary" id="dgSave">🌱 Save to my garden</button>
+          <button type="button" class="btn btn-ghost" id="dgNew">Start a fresh page</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="dg-garden-col reveal" style="--d:.2s" aria-label="Your garden">
+      <div class="dg-card dg-garden">
+        <header class="dg-card-head">
+          <div>
+            <p class="dg-kicker">Your garden</p>
+            <h2 id="dgGardenTitle">All Thoughts</h2>
+          </div>
+          <span class="dg-pill" id="dgGardenMeta">0 blooms</span>
+        </header>
+
+        <div class="dg-scene" id="dgScene" data-stage="0" role="img" aria-label="Your garden is empty. Save a diary page to plant the first seed.">
+          <div class="dg-sun"></div>
+          <div class="dg-cloud c1"></div>
+          <div class="dg-cloud c2"></div>
+          <div class="dg-cloud c3"></div>
+          <i class="dg-spark" style="left:16%;top:24%"></i>
+          <i class="dg-spark" style="left:46%;top:14%;animation-delay:-1.4s"></i>
+          <i class="dg-spark" style="left:78%;top:34%;animation-delay:-2.6s"></i>
+          <svg class="dg-hills" viewBox="0 0 800 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+            <path fill="#d6ecdb" d="M0 330 Q170 250 360 320 T800 290 V640H0Z"/>
+            <path fill="#bfe0c8" d="M0 400 Q220 330 430 395 T800 370 V640H0Z"/>
+            <path fill="#a6d3b3" d="M0 470 Q260 410 520 465 T800 448 V640H0Z"/>
+            <path fill="#92c6a2" d="M0 550 Q300 500 560 545 T800 530 V640H0Z"/>
+          </svg>
+          <div class="dg-plot" id="dgPlot"></div>
+          <div class="dg-creatures" id="dgCreatures" aria-hidden="true"></div>
+          <p class="dg-scene-empty" id="dgGardenEmpty">Your garden is waiting for its first seed 🌱</p>
+        </div>
+
+        <div class="dg-stats">
+          <div><b id="dgStatEntries">0</b><span>Pages</span></div>
+          <div><b id="dgStatStage">Seed</b><span>Stage</span></div>
+          <div><b id="dgStatColls">0</b><span>Collections</span></div>
+        </div>
+
+        <div class="dg-stage">
+          <div class="dg-stage-bar"><i id="dgStageBar"></i></div>
+          <small id="dgStageNote">Save your first page to plant a seed.</small>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Saved pages -->
+  <section class="dg-saved reveal" id="dgSaved" aria-labelledby="dgSavedTitle">
+    <header class="dg-sec-head">
+      <div>
+        <p class="eyebrow">My Saved Gardens</p>
+        <h2 id="dgSavedTitle">Pages in <em id="dgSavedColl">All Thoughts</em></h2>
+      </div>
+      <div class="dg-filters">
+        <label class="dg-search">
+          <span aria-hidden="true">🔍</span>
+          <input type="search" id="dgSearch" placeholder="Search your pages" aria-label="Search saved pages" autocomplete="off">
+        </label>
+        <select class="dg-input dg-sort" id="dgSort" aria-label="Sort pages">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="dg-entries" id="dgEntries"></div>
+
+    <div class="dg-empty" id="dgEntriesEmpty">
+      <span aria-hidden="true">🌱</span>
+      <h3>No pages here yet</h3>
+      <p>Write your first page above and it will appear here, ready to reopen, edit or share with a collection.</p>
+    </div>
+  </section>
+
+  <!-- Backup -->
+  <section class="dg-card dg-backup reveal" aria-labelledby="dgBackupTitle">
+    <div>
+      <p class="dg-kicker">Backup</p>
+      <h2 id="dgBackupTitle">Keep your garden safe</h2>
+      <p class="dg-muted">Your pages are saved only in this browser. Clearing browser data would erase them, so export a backup file now and then. You can import it later to restore everything or move to another device.</p>
+    </div>
+    <div class="dg-backup-btns">
+      <button type="button" class="btn btn-ghost" id="dgExport">⬇ Export backup</button>
+      <button type="button" class="btn btn-ghost" id="dgImportBtn">⬆ Import backup</button>
+      <input type="file" id="dgImportFile" accept="application/json,.json" hidden>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> CalmNest · Made with care for students. Not a substitute for professional help.</div></footer>
+
+<!-- Dialog: create / rename collection -->
+<dialog class="dg-dlg" id="dgNameDlg" aria-labelledby="dgNameTitle">
+  <form id="dgNameForm" novalidate autocomplete="off">
+    <h3 id="dgNameTitle">New collection</h3>
+    <p class="dg-dlg-sub" id="dgNameSub">Give this garden a name, like “Midnight Thoughts” or “My Happy Place”.</p>
+    <label class="dg-field">
+      <span class="dg-lbl">Name</span>
+      <input class="dg-input" type="text" id="dgNameInput" maxlength="40" placeholder="e.g. Midnight Thoughts" required>
+    </label>
+    <p class="dg-formerr" id="dgNameErr" role="alert" hidden></p>
+    <div class="dg-dlg-actions">
+      <button type="button" class="btn btn-ghost" id="dgNameCancel">Cancel</button>
+      <button type="submit" class="btn btn-primary" id="dgNameOk">Create</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Dialog: confirm -->
+<dialog class="dg-dlg" id="dgConfirmDlg" aria-labelledby="dgConfirmTitle">
+  <h3 id="dgConfirmTitle">Are you sure?</h3>
+  <p class="dg-dlg-sub" id="dgConfirmText"></p>
+  <div class="dg-dlg-actions">
+    <button type="button" class="btn btn-ghost" id="dgConfirmCancel">Cancel</button>
+    <button type="button" class="btn btn-primary" id="dgConfirmOk">Delete</button>
+  </div>
+</dialog>
+
+<!-- Dialog: choose collections for a saved page -->
+<dialog class="dg-dlg" id="dgPickDlg" aria-labelledby="dgPickTitle">
+  <h3 id="dgPickTitle">Add to collections</h3>
+  <p class="dg-dlg-sub">Choose where this page should grow. Every page always stays in All Thoughts.</p>
+  <div class="dg-picklist" id="dgPickList"></div>
+  <div class="dg-dlg-actions">
+    <button type="button" class="btn btn-ghost" id="dgPickCancel">Cancel</button>
+    <button type="button" class="btn btn-primary" id="dgPickOk">Save</button>
+  </div>
+</dialog>
+
+<!-- Dialog: import backup -->
+<dialog class="dg-dlg" id="dgImportDlg" aria-labelledby="dgImportTitle">
+  <h3 id="dgImportTitle">Import backup</h3>
+  <p class="dg-dlg-sub" id="dgImportSummary">Choose how to bring this backup in.</p>
+  <div class="dg-picklist">
+    <label class="dg-check">
+      <input type="radio" name="dgImportMode" value="merge" checked>
+      <span><strong>Merge:</strong> keep what is here and add the backup</span>
+    </label>
+    <label class="dg-check">
+      <input type="radio" name="dgImportMode" value="replace">
+      <span><strong>Replace:</strong> swap everything here for the backup</span>
+    </label>
+  </div>
+  <div class="dg-dlg-actions">
+    <button type="button" class="btn btn-ghost" id="dgImportCancel">Cancel</button>
+    <button type="button" class="btn btn-primary" id="dgImportOk">Import</button>
+  </div>
+</dialog>
+
+<div class="dg-toast" id="dgToast" role="status" aria-live="polite"></div>
+
+<script src="assests/js/main.js"></script>
+<script src="assests/js/dg-storage.js"></script>
+<script src="assests/js/dg-stickers.js"></script>
+<script src="assests/js/dg-garden.js"></script>
+<script src="assests/js/dg-diary.js"></script>
+<script src="assests/js/dg-collections.js"></script>
+<script src="assests/js/dg-app.js"></script>
+</body>
+</html>

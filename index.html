@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CalmNest · A softer space for student minds</title>
+<meta name="description" content="CalmNest is a gentle wellness space for students: calm scenes, music, creative breaks and a thought garden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assests/css/base.css">
+<link rel="stylesheet" href="assests/css/home.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><i></i>CalmNest</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="links">
+      <li><a href="index.html" class="on">Home</a></li>
+      <li><a href="nature.html">Nature</a></li>
+      <li><a href="music.html">Music</a></li>
+     <li><a href="https://little-universe-of-feelings.lovable.app" target="_blank" rel="noopener noreferrer">Creative Break</a></li>
+      <li><a href="diary-garden.html">Thought Garden</a></li>
+      <li><a href="login.html" class="btn btn-primary" style="padding:.5rem 1.2rem">Sign in</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow reveal">Student mental wellness</p>
+        <h1 class="reveal" style="--d:.1s">A softer space for <em>busy minds</em>.</h1>
+        <p class="lead reveal" style="--d:.2s">Pause between lectures, deadlines and everything else. Build a calm scene, listen, create, and let your thoughts grow somewhere gentle.</p>
+        <div class="cta reveal" style="--d:.3s">
+          <a href="nature.html" class="btn btn-primary">Create my calm scene →</a>
+          <a href="#breathe" class="btn btn-ghost">Take a breath</a>
+        </div>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="card float f1"><small>Today's mood</small><div class="chips"><span>😌 Calm</span><span>🌤 Hopeful</span><span>😴 Tired</span></div></div>
+        <div class="card float f2"><small>Now playing</small><strong>Soft rain &amp; piano</strong><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="card float f3"><small>Thought Garden</small><strong>🌱 3 thoughts bloomed</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="breathe">
+    <div class="wrap breathe">
+      <div class="reveal">
+        <p class="eyebrow">One minute reset</p>
+        <h2>Breathe with the circle.</h2>
+        <p class="lead" style="margin:14px 0 24px">Inhale as it grows, exhale as it softens. Four counts in, six counts out.</p>
+        <button class="btn btn-primary" id="breathBtn">Start breathing</button>
+      </div>
+      <div class="ring reveal" style="--d:.15s"><div class="circle" id="circle"><span id="breathTxt">Ready?</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Explore</p>
+      <h2 class="reveal" style="--d:.1s;margin-bottom:36px">Everything you need to unwind.</h2>
+      <div class="grid">
+        <a href="nature.html" class="card reveal"><span class="ic" style="background:#d8f0e0">🌲</span><h3>Nature Scenes</h3><p>Forest, ocean or mountains, in morning, sunset or rain. Or upload your own view.</p></a>
+        <a href="music.html" class="card reveal" style="--d:.1s"><span class="ic" style="background:#dcecfa">🎧</span><h3>Music</h3><p>Gentle soundscapes and focus playlists to settle your mind.</p></a>
+    <a href="https://little-universe-of-feelings.lovable.app" target="_blank" rel="noopener noreferrer" class="card reveal" style="--d:.2s">
+  <span class="ic" style="background:#fff0bd">🎨</span>
+  <h3>Creative Break</h3>
+  <p>Explore your own little universe of feelings, creativity and dreams.</p>
+</a>
+        <a href="diary-garden.html" class="card reveal" style="--d:.3s"><span class="ic" style="background:#fde3e3">🌸</span><h3>Thought Garden</h3><p>Plant worries and wins, and watch them grow into something lighter.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="card quote reveal">
+        <p class="eyebrow">A little reminder</p>
+        <blockquote id="affirm">You don't have to do everything today. One small step still counts.</blockquote>
+        <button class="btn btn-ghost" id="affBtn">Another one ↻</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap band reveal">
+      <h2>Ready for a calmer moment?</h2>
+      <p>Build your first scene. It takes less than a minute.</p>
+      <a href="nature.html" class="btn btn-primary">Start now</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> CalmNest · Made with care for students. Not a substitute for professional help.</div></footer>
+<script src="assests/js/main.js"></script>
+<script src="assests/js/home.js"></script>
+</body>
+</html>
