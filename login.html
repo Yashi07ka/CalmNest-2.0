@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in · CalmNest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assests/css/base.css">
+<link rel="stylesheet" href="assests/css/auth.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><i></i>CalmNest</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nature.html">Nature</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="https://little-universe-of-feelings.lovable.app" target="_blank" rel="noopener noreferrer">Creative Break</a></li>
+      <li><a href="diary-garden.html">Thought Garden</a></li>
+      <li><a href="login.html" class="btn btn-primary" style="padding:.5rem 1.2rem">Sign in</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap auth-wrap">
+      <p class="eyebrow">Account</p>
+      <h1>Sign in</h1>
+      <p class="lead">Use the same account you will use across CalmNest.</p>
+      <form class="card auth-card" id="authForm" data-mode="signin" novalidate>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <p class="auth-msg" id="authMsg" hidden></p>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+        <p class="auth-note">New here? <a href="signup.html">Create an account</a></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> CalmNest · Made with care for students. Not a substitute for professional help.</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="assests/js/supabase-config.js"></script>
+<script src="assests/js/auth.js"></script>
+<script src="assests/js/auth-forms.js"></script>
+<script src="assests/js/main.js"></script>
+</body>
+</html>

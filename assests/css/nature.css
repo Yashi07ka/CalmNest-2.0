@@ -72,3 +72,6 @@ input[type=text]{width:100%;padding:.8rem 1rem;border-radius:16px;border:1px sol
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 @media(max-width:900px){.layout{grid-template-columns:1fr}}
+.stage.has-photo .cloud {
+  opacity: 0;
+}
